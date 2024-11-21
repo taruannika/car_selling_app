@@ -4,6 +4,7 @@ import cookieParser from "cookie-parser";
 import mongoose from "mongoose";
 
 import { MONGO_URI } from "./utils/config.js";
+import authRoutes from "./routes/auth.routes.js";
 
 const app = express();
 
@@ -22,6 +23,8 @@ app.use(express.json());
 app.use(cookieParser());
 
 // Routes
+
+app.use("/api/auth", authRoutes);
 
 // unknown route
 
